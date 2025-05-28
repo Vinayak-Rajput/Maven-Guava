@@ -1,0 +1,33 @@
+pipeline{
+	agent any
+	tools{
+		maven 'Maven'
+		jdk 'JDK'
+	}
+	stages{
+		stage('Checkout'){
+			steps{
+				git "https://github.com/Second-Fiddle-VK/Maven-Guava.git"
+			}
+		}
+		stage('Build'){
+			steps{
+				sh 'mvn clean install'
+			}
+		}
+		stage('Run Application'){
+			steps{
+				sh 'mvn exec:java -Dexec.mainClass="com.example.App"'
+			}
+		}
+	}
+	post{
+		success{
+			echo "Run and build successfully"
+		}
+		failure{
+			echo "Run and Build Failed"
+		}
+	}
+}
+		

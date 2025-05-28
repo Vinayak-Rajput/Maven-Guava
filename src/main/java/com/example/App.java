@@ -1,0 +1,22 @@
+package com.example;
+
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+import com.google.common.collect.ImmutableList;
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ImmutableList<String> fruits =ImmutableList.of("Apple","Banana","Guava");
+        System.out.println(fruits);
+        File sourceFile=new File("src.txt");
+        File destFile=new File("dest.txt");
+        try{
+        	FileUtils.copyFile(sourceFile,destFile);
+        	System.out.println("File contents copied successfully");
+        }catch(IOException e){
+        	System.err.println("Error occured while copying file "+e.getMessage());
+        }
+    }
+}
