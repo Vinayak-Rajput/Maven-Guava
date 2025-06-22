@@ -7,7 +7,7 @@ pipeline{
 	stages{
 		stage('Checkout'){
 			steps{
-				git "https://github.com/Second-Fiddle-VK/Maven-Guava.git"
+				git "https://github.com/Vinayak-Rajput/Maven-Guava.git"
 			}
 		}
 		stage('Build'){
