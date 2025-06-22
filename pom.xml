@@ -53,6 +53,6 @@
   			</configuration>
   		</plugin>
   	</plugins>
-  	<finalName>Guava</finalName>
+  	<finalName>Maven-Guava</finalName>
   </build>
 </project>
